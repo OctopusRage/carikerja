@@ -13,4 +13,8 @@ class Job extends Model
     public function user(){
         return $this->belongsTo('App\User', 'creator_id', 'id');
     }
+
+    public function jobTypes(){
+        return $this->belongsToMany('App\Models\JobType', 'job_type_joins');
+    }
 }

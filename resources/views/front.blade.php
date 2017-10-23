@@ -18,8 +18,9 @@
             <div class="card-columns">
                 <div class="card mb-3" style="max-width: 20rem;">
                     <div class="card-header">
-                        <span class="badge badge-primary">Primary</span>
-                        <span class="badge badge-primary">Primary</span>
+                        @foreach($job->jobTypes as $type)
+                            <span class="badge badge-primary">{{$type->name}}</span>
+                        @endforeach
                     </div>
                     <div class="card-body">
                         <a href="#"> <h4 class="card-title">{{$job->name}}</h4> </a>
@@ -27,6 +28,7 @@
                         <p class="card-text">{{$job->description}}</p>
                     </div>
                 </div>
+
             </div>
         </div>
     @endforeach
