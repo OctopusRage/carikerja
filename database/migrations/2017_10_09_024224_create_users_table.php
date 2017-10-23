@@ -22,6 +22,7 @@ class CreateUsersTable extends Migration
             $table->text('alamat')->nullable();
             $table->text('biodata')->nullable();
             $table->text('cv')->nullable();
+            $table->string('remember_token')->nullable();
             $table->timestamps();
         });
     }

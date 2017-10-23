@@ -9,7 +9,7 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="{{route('home')}}">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Populer</a>
@@ -19,11 +19,20 @@
                 </li>
             </ul>
         </div>
-        <div class="float-right">
-            <a href="#" >
-                Login <i class="icon-user"></i>
-            </a>
-        </div>
+        @if(Auth::check())
+            <div class="float-right">
+                <a href="{{route('logout.get')}}" >
+                    Logout <i class="icon-user"></i>
+                </a>
+            </div>
+        @else
+            <div class="float-right">
+                <a href="{{route('login')}}" >
+                    Login <i class="icon-user"></i>
+                </a>
+            </div>
+        @endif
+
 
     </div>
 </nav>

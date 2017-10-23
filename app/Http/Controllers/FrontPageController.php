@@ -7,7 +7,7 @@ class FrontPageController extends Controller
 {
     public function index(){
         $users = User::all();
-        return view('home')
+        return view('front')
             ->with('users', $users);
     }
 

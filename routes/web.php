@@ -12,7 +12,8 @@
 */
 
 Route::get('/', 'FrontPageController@index');
+Route::Auth();
+Route::get('logout', 'Auth\LoginController@logout')->name('logout.get');
 
-Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'FrontPageController@index')->name('home');
