@@ -1,14 +1,15 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Models\Job;
 use App\Models\User;
 
 class FrontPageController extends Controller
 {
     public function index(){
-        $users = User::all();
+        $jobs = Job::all();
         return view('front')
-            ->with('users', $users);
+            ->with('jobs', $jobs);
     }
 
 }
